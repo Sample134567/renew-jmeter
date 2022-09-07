@@ -1,0 +1,23 @@
+execution:
+- iterations: 50
+  concurrency: 20
+  scenario: with_script
+
+scenarios:
+  with_script:
+    script: ./jmeter-file/Reporting.jmx
+
+modules:
+  blazemeter:
+    token: 2a2823c3d86d67abb192166f:3261bfbfba0407a00b06b5928c50c75296969b7a1ea6c1bbbac2d2bdbcfabff9d3ecf853
+
+
+reporting:
+- module: blazemeter
+  report-name: Sample Testing
+  test: JmeterTest
+  upload-artifacts: true
+# - module: passfail
+#   criteria:
+#   - "avg-rt>1550ms for 10s, continue as failed"
+#   - "fail>50% for 10s, stop as failed"
